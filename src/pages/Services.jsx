@@ -9,6 +9,7 @@ import iconCoin from '../assets/icons/icon-coin.png';
 import iconShield from '../assets/icons/icon-shield.png';
 import iconSearch from '../assets/icons/icon-search.png';
 import iconPie from '../assets/icons/icon-pie.png';
+import iconLocker from '../assets/icons/icon-locker.png';
 
 const Services = () => {
     const services = [
@@ -38,7 +39,7 @@ const Services = () => {
         {
             id: 'retirement',
             title: 'Retirement Strategy',
-            icon: <img src={iconPie} alt="Retirement Strategy" />,
+            icon: <img src={iconLocker} alt="Retirement Strategy" />,
             features: [
                 'Future Expense Mapping',
                 'Retirement Corpus Calculation',
