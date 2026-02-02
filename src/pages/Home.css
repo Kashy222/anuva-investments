@@ -1,0 +1,482 @@
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #00588f, #004570);
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 80px 0 60px;
+    /* Reduced bottom padding by 20px (from 80 to 60) */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Pattern Overlay */
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    /* Ensure it stays above pattern */
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3rem;
+    /* Reduced from 3.5rem */
+    font-weight: 700;
+    /* Reduced from 800 */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text-gold {
+    color: var(--primary-gold);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-200);
+    margin-bottom: 30px;
+    /* Reduced from 40px for visual adjustment */
+    max-width: 600px;
+    /* Increased max-width for the new one-liner if needed, or kept same */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.btn.lg {
+    padding: 0 24px;
+    /* Reduced side padding (from 32px to 24px) */
+    /* Kept horizontal padding, height controlled by .btn */
+    font-size: 1.1rem;
+}
+
+.btn.border-white {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--white);
+}
+
+.btn.border-white:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border-color: var(--white);
+}
+
+/* Hero Visual & Data Vis */
+.hero-visual {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-main {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Stats Section on Left */
+/* Stats Section (New) */
+.stats-section {
+    padding: 28px 0 60px;
+    /* Increased top padding by 8px (20->28) */
+    /* Reduced top padding (gap) by another 20px */
+    background-color: var(--white);
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    background-color: #dee2e6;
+    /* Specific grey requested */
+    padding: 12px 40px;
+    /* Reduced vertical padding further */
+    /* Reduced for compact size */
+    /* Reduced for compact size */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.stat-item.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    /* Reduced gap */
+}
+
+.icon-box-large {
+    background: var(--white);
+    /* White background for contrast */
+    width: 70px;
+    /* Fixed width for balance */
+    height: 70px;
+    /* Fixed height for balance */
+    border-radius: 50%;
+    /* Circle shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon-img {
+    height: 40px;
+    /* Keep icon size */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Override lucide icon size if needed, but size={32} in JSX is fine.
+   Reference has larger icons, maybe increase in JSX next step if needed.
+*/
+
+/* Hover effect removed as per user request */
+.stat-item.vertical:hover .icon-box-large {
+    transform: none;
+    background: transparent;
+}
+
+.stat-text-single-line {
+    color: var(--primary-blue);
+    /* Dark text for grey background */
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.stat-text-single-line strong {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-right: 6px;
+    color: var(--primary-blue);
+    /* Ensure number is also dark */
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.chart-label {
+    font-size: 0.9rem;
+    color: var(--gray-300);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.chart-header h4 {
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.chart-header small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--gray-300);
+}
+
+.text-green {
+    color: #4ade80;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+.text-green-dark {
+    color: #16a34a;
+}
+
+/* Floating Stats Cards */
+.stat-card {
+    position: absolute;
+    background: var(--white);
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: float 6s ease-in-out infinite;
+    min-width: 180px;
+}
+
+.icon-box {
+    background-color: var(--off-white);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.stat-card span {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+}
+
+/* Positioning of floating cards */
+.floating-1 {
+    top: 20px;
+    right: 0px;
+    animation-delay: 0s;
+}
+
+.floating-2 {
+    bottom: 40px;
+    right: -20px;
+    animation-delay: -2s;
+}
+
+.floating-3 {
+    bottom: 80px;
+    left: -30px;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.bg-off-white {
+    background-color: var(--off-white);
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(219, 167, 61, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary-gold);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.feature-card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+/* Services Preview */
+.services-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-preview-item {
+    padding: 30px;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.service-preview-item:hover {
+    border-color: var(--primary-gold);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-preview-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.service-preview-item p {
+    color: var(--gray-600);
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-gold-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.learn-more:hover {
+    gap: 8px;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--gray-800);
+    padding: 80px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    color: var(--gray-300);
+    font-size: 1.1rem;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 40px 0 40px;
+        /* Reduced top/bottom padding */
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        /* Reduced gap */
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        /* Reduced font size */
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 20px;
+        /* Reduced margin */
+        font-size: 1.05rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+        /* Tighter gap */
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 320px;
+        /* Constrain width for buttons */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        padding: 0 12px;
+        /* Reduced side padding (24px -> 12px) */
+    }
+
+    .hero-visual {
+        margin-top: 0;
+        height: 240px;
+        /* Reduced by 20% (300px -> 240px) */
+        min-height: 240px;
+    }
+
+    .hero-image-main {
+        max-height: 240px;
+    }
+
+    .services-preview {
+        grid-template-columns: 1fr;
+    }
+}

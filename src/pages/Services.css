@@ -1,0 +1,108 @@
+.page-header {
+    background-color: var(--gray-100);
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    border: 1px solid var(--gray-200);
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /* text-align: left; */
+    /* Default is left */
+}
+
+.service-card:hover {
+    border-color: var(--gray-200);
+    /* Reference doesn't imply hover border change, keeping subtle */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Keep shadow */
+    transform: translateY(-5px);
+}
+
+.service-icon-wrapper {
+    /* Removed fixed width/height circle background */
+    width: auto;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+    /* Align left */
+    margin-bottom: 20px;
+    /* color: var(--primary-blue); */
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon-wrapper {
+    background-color: transparent;
+    /* No hover bg change */
+    /* color: var(--white); */
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0d3b66;
+    /* Match dark blue/green from reference? */
+}
+
+.service-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-features {
+    border-top: none;
+    /* Remove border */
+    padding-top: 5px;
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.service-features li {
+    margin-bottom: 8px;
+    padding-left: 0;
+}
+
+/* New image styles */
+.service-icon-wrapper img {
+    width: 40px;
+    /* Small icon size from reference */
+    height: 40px;
+    object-fit: contain;
+    padding: 0;
+    display: block;
+}
+
+
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Force single column on mobile */
+    }
+}

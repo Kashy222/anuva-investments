@@ -1,0 +1,67 @@
+.discovery-call-cta {
+    background-color: var(--primary-blue);
+    padding: 16px 32px;
+    /* Increased horizontal padding */
+    /* Reduced from 24px */
+    border-radius: 12px;
+    color: var(--white);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.discovery-call-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.discovery-call-text h2 {
+    font-size: 1.55rem;
+    /* Reduced from 1.625rem (26px to ~24.8px) */
+    margin-bottom: 5px;
+    color: var(--white);
+    font-weight: 500;
+    /* Reduced from 600 */
+}
+
+.discovery-call-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.discovery-call-btn {
+    white-space: nowrap;
+    padding: 12px 24px;
+    background-color: var(--primary-gold);
+    /* Using shared theme color */
+    color: var(--white);
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.discovery-call-btn:hover {
+    background-color: var(--primary-gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .discovery-call-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .discovery-call-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

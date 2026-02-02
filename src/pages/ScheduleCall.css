@@ -1,0 +1,148 @@
+.schedule-page {
+    min-height: calc(100vh - var(--header-height));
+}
+
+.split-layout {
+    display: flex;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.split-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+.bg-blue {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.content-wrapper {
+    max-width: 500px;
+}
+
+.content-wrapper h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.content-wrapper p {
+    color: var(--gray-300);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-gold);
+}
+
+.contact-item span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray-300);
+    margin-bottom: 2px;
+}
+
+.contact-item p {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.contact-item a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.contact-item .contact-micro {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-item .contact-micro {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-wrapper h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--gray-800);
+}
+
+.btn.block {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .split-content {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+}

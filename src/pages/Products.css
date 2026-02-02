@@ -1,0 +1,104 @@
+/* Reusing some Page Header styles from Services.css via global styles or copy */
+/* Ideally we would extract PageHeader to a component, but keeping it simple here */
+
+.products-page .page-header {
+    background-color: var(--gray-100);
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin: 40px 0 20px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.category-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: var(--primary-gold);
+    border-radius: 2px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f7ff;
+    color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.product-card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.advisory-note {
+    margin-top: 60px;
+    text-align: center;
+    background-color: #fcfbf8;
+    border: 1px dashed var(--primary-gold);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.advisory-note h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.advisory-note p {
+    margin-bottom: 20px;
+    color: var(--gray-600);
+}
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
