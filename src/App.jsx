@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
-import Products from './pages/Products';
+
 import Tools from './pages/Tools';
 import ScheduleCall from './pages/ScheduleCall';
 
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/products" element={<Products />} />
+
         <Route path="/tools" element={<Tools />} />
         <Route path="/schedule-call" element={<ScheduleCall />} />
       </Routes>

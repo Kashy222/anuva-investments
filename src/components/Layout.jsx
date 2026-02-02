@@ -19,7 +19,7 @@ const Header = () => {
         <nav className="desktop-nav">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink>
           <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Services</NavLink>
-          <NavLink to="/products" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Products</NavLink>
+
           <NavLink to="/tools" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Tools</NavLink>
           <Link to="/schedule-call" className="btn btn-primary sm">Book Free Call</Link>
         </nav>
@@ -34,7 +34,7 @@ const Header = () => {
           <div className="mobile-nav">
             <NavLink to="/" onClick={toggleMenu} className="mobile-nav-link">Home</NavLink>
             <NavLink to="/services" onClick={toggleMenu} className="mobile-nav-link">Services</NavLink>
-            <NavLink to="/products" onClick={toggleMenu} className="mobile-nav-link">Products</NavLink>
+
             <NavLink to="/tools" onClick={toggleMenu} className="mobile-nav-link">Tools</NavLink>
             <Link to="/schedule-call" onClick={toggleMenu} className="btn btn-primary mobile-cta">Book Free Call</Link>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/services">Services</Link></li>
-            <li><Link to="/products">Products</Link></li>
+
             <li><Link to="/tools">Tools</Link></li>
           </ul>
         </div>

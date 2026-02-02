@@ -106,7 +106,7 @@ const Home = () => {
                         <div className="service-preview-item">
                             <h3>Multi-Asset Investing</h3>
                             <p>Diversified portfolios across mutual funds, stocks, and bonds tailored to your risk profile.</p>
-                            <Link to="/products" className="learn-more">Learn more <ArrowRight size={16} /></Link>
+                            <Link to="/services" className="learn-more">Learn more <ArrowRight size={16} /></Link>
                         </div>
                         <div className="service-preview-item">
                             <h3>Tracking & Review</h3>
