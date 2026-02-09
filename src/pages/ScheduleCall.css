@@ -102,6 +102,9 @@
 .form-wrapper {
     width: 100%;
     max-width: 450px;
+    position: relative;
+    /* Ensure minimum height to contain overlay nicely if form is short */
+    min-height: 400px;
 }
 
 .form-wrapper h2 {

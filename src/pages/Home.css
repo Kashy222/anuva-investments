@@ -476,7 +476,104 @@
         max-height: 240px;
     }
 
-    .services-preview {
-        grid-template-columns: 1fr;
+
+}
+
+
+/* Carousel Modes */
+.hero-section.carousel-mode {
+    padding: 0;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.8s ease;
+    /* Using opacity transition for smoother feel, transform can be tricky with absolute */
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* Ensure container inside slide behaves well */
+.carousel-slide .hero-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+
+
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--primary-gold);
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    .carousel-container {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .carousel-slide {
+        position: absolute;
+        /* Keep absolute for stacking */
+    }
+
+    .carousel-slide .hero-container {
+        flex-direction: column-reverse;
+        /* Ensure mobile layout is respected */
+        justify-content: center;
+        padding: 40px 20px 80px;
+        /* Space for dots */
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+    .carousel-dots {
+        bottom: 20px;
     }
 }
