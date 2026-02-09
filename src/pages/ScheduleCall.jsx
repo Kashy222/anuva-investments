@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Mail, Phone, Calendar, MessageCircle, CheckCircle, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import './ScheduleCall.css';
+import { submitToGoogleSheets } from '../utils/googleSheets';
 
 const ScheduleCall = () => {
     const location = useLocation();
@@ -132,28 +133,18 @@ const ScheduleCall = () => {
         };
 
         // Send data to Google Sheets
-        try {
-            await fetch('https://script.google.com/macros/s/AKfycbxSygxZE1KP_QPlqI5wSF5rozmEz3tO_38ijZlsYNwgQcUMycKydsYkw3_7ozj1iopjJA/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(leadData)
-            });
+        const success = await submitToGoogleSheets(leadData);
 
+        if (success) {
             // Show success overlay
             setIsSuccess(true);
             setCountdown(5);
-
-        } catch (error) {
-            console.error('Error saving lead:', error);
-        } finally {
-            setIsSubmitting(false);
         }
 
-        // WhatsApp redirection removed as per request
+        setIsSubmitting(false);
     };
+
+    // WhatsApp redirection removed as per request
 
     return (
         <div className="schedule-page">

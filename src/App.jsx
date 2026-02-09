@@ -7,6 +7,8 @@ import Services from './pages/Services';
 import Tools from './pages/Tools';
 import ScheduleCall from './pages/ScheduleCall';
 
+import Chatbot from './components/Chatbot/Chatbot';
+
 function App() {
   return (
     <Layout>
@@ -17,6 +19,7 @@ function App() {
         <Route path="/tools" element={<Tools />} />
         <Route path="/schedule-call" element={<ScheduleCall />} />
       </Routes>
+      <Chatbot />
     </Layout>
   );
 }
