@@ -12,6 +12,7 @@ const ScheduleCall = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [countdown, setCountdown] = useState(5);
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         if (location.state) {
@@ -54,6 +55,35 @@ const ScheduleCall = () => {
     const handleClosePopup = () => {
         setIsSuccess(false);
         setCountdown(5);
+        setErrors({});
+    };
+
+    const validateField = (name, value) => {
+        let error = '';
+        if (name === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                error = 'Please enter a valid email address';
+            }
+        }
+        if (name === 'phone') {
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(value)) {
+                error = 'Please enter a valid 10-digit mobile number';
+            }
+        }
+
+        setErrors(prev => ({
+            ...prev,
+            [name]: error
+        }));
+
+        return error === '';
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        validateField(name, value);
     };
 
     const handleFormSubmit = async (e) => {
@@ -61,11 +91,34 @@ const ScheduleCall = () => {
 
         if (isSubmitting || isSuccess) return;
 
-        setIsSubmitting(true);
         const formData = new FormData(e.target);
-        const name = formData.get('name');
+
+        // Validate All Fields
+        let isValid = true;
+        const newErrors = {};
+
+        // Email
         const email = formData.get('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            newErrors.email = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        // Phone
         const phone = formData.get('phone');
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(phone)) {
+            newErrors.phone = 'Please enter a valid 10-digit mobile number';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+
+        if (!isValid) return;
+
+        setIsSubmitting(true);
+        const name = formData.get('name');
         const service = formData.get('service');
 
         // Prepare data for Google Sheets
@@ -146,7 +199,7 @@ const ScheduleCall = () => {
                 <div className="split-content bg-white">
                     <div className="form-wrapper">
                         <h2>Book Appointment</h2>
-                        <form className="booking-form" onSubmit={handleFormSubmit}>
+                        <form className="booking-form" onSubmit={handleFormSubmit} noValidate>
                             <div className="form-group">
                                 <label htmlFor="name">Full Name</label>
                                 <input id="name" name="name" type="text" placeholder="John Doe" required disabled={isSubmitting || isSuccess} />
@@ -154,12 +207,33 @@ const ScheduleCall = () => {
 
                             <div className="form-group">
                                 <label htmlFor="email">Email Address</label>
-                                <input id="email" name="email" type="email" placeholder="john@example.com" required disabled={isSubmitting || isSuccess} />
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="john@example.com"
+                                    required
+                                    disabled={isSubmitting || isSuccess}
+                                    className={errors.email ? 'input-error' : ''}
+                                    onChange={handleInputChange}
+                                />
+                                {errors.email && <span className="error-text" style={{ color: '#EF4444', fontSize: '0.85rem', marginTop: '4px', display: 'block' }}>{errors.email}</span>}
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="phone">Phone Number</label>
-                                <input id="phone" name="phone" type="tel" placeholder="+91 99999 99999" required disabled={isSubmitting || isSuccess} />
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="9876543210"
+                                    required
+                                    disabled={isSubmitting || isSuccess}
+                                    maxLength={10}
+                                    className={errors.phone ? 'input-error' : ''}
+                                    onChange={handleInputChange}
+                                />
+                                {errors.phone && <span className="error-text" style={{ color: '#EF4444', fontSize: '0.85rem', marginTop: '4px', display: 'block' }}>{errors.phone}</span>}
                             </div>
 
                             <div className="form-group">
