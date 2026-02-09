@@ -12,11 +12,11 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    background: linear-gradient(135deg, #00588f, #004875);
     color: white;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 88, 143, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
 
 .chatbot-toggle:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 6px 16px rgba(0, 88, 143, 0.4);
 }
 
 .chatbot-container.open .chatbot-toggle {
@@ -59,7 +59,7 @@
 
 /* Header */
 .chatbot-header {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
+    background: linear-gradient(135deg, #00588f, #004875);
     padding: 1.25rem;
     display: flex;
     align-items: center;
@@ -138,7 +138,7 @@
     width: 28px;
     height: 28px;
     min-width: 28px;
-    background: #2563eb;
+    background: #00588f;
     color: white;
     font-size: 0.7rem;
     display: flex;
@@ -164,7 +164,7 @@
 }
 
 .message.user .bubble {
-    background: #2563eb;
+    background: #00588f;
     color: white;
     border-bottom-right-radius: 4px;
 }
@@ -219,15 +219,15 @@
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: #2563eb;
+    color: #00588f;
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
 }
 
 .option-btn:hover {
-    background: #eff6ff;
-    border-color: #bfdbfe;
+    background: #f0f9ff;
+    border-color: #bae6fd;
     transform: translateY(-1px);
 }
 
@@ -251,7 +251,7 @@
 }
 
 .chatbot-input input:focus {
-    border-color: #2563eb;
+    border-color: #00588f;
 }
 
 .chatbot-input input:disabled {
@@ -263,7 +263,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #00588f;
     color: white;
     border: none;
     display: flex;
@@ -279,7 +279,7 @@
 }
 
 .chatbot-input button:hover:not(:disabled) {
-    background: #1d4ed8;
+    background: #004875;
 }
 
 /* Responsive */

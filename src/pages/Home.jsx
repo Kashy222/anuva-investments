@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Shield, PieChart, CheckCircle, Users, Wallet, Smile, Award, Coins } from 'lucide-react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ArrowRight, TrendingUp, Shield, CheckCircle } from 'lucide-react';
 import './Home.css';
+import Chatbot from '../components/Chatbot/Chatbot';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -41,9 +41,6 @@ const Home = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-
     return (
         <div className="home-page">
             {/* Hero Carousel Section */}
@@ -74,8 +71,6 @@ const Home = () => {
                         </div>
                     ))}
 
-
-
                     <div className="carousel-dots">
                         {slides.map((_, index) => (
                             <button
@@ -89,7 +84,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Stats Section (White Background with Dark Banner) */}
+            {/* Stats Section */}
             <section className="stats-section">
                 <div className="container">
                     <div className="stats-grid">
@@ -185,6 +180,8 @@ const Home = () => {
                     <Link to="/schedule-call" className="btn btn-primary lg">Book Free Call</Link>
                 </div>
             </section>
+
+            <Chatbot />
         </div>
     );
 };
