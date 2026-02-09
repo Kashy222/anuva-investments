@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as ReTooltip, ResponsiveContainer, Cell } from 'recharts';
+import ResultChart from './ResultChart';
 
 const HLVCalculator = ({ onUpdate }) => {
     const [annualIncome, setAnnualIncome] = useState(1000000);
@@ -38,12 +38,6 @@ const HLVCalculator = ({ onUpdate }) => {
     useEffect(() => {
         handleCalculate();
     }, []);
-
-    const data = [
-        { name: 'Total Future Income', amount: totalFutureIncome },
-        { name: 'Existing Cover', amount: savings },
-        { name: 'Additional Needed', amount: insuranceNeeded },
-    ];
 
     return (
         <div className="calculator-container">
@@ -104,20 +98,14 @@ const HLVCalculator = ({ onUpdate }) => {
                     </div>
                 </div>
 
-                <div className="chart-wrapper" style={{ minHeight: '250px' }}>
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 40, bottom: 5 }}>
-                            <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                            <XAxis type="number" hide />
-                            <YAxis type="category" dataKey="name" width={100} style={{ fontSize: '0.8rem' }} />
-                            <ReTooltip formatter={(value) => `₹${value.toLocaleString()}`} />
-                            <Bar dataKey="amount" fill="#00588f" barSize={30} radius={[0, 5, 5, 0]}>
-                                {data.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={index === 2 ? '#dba73d' : '#00588f'} />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
+                <div className="chart-wrapper">
+                    <ResultChart
+                        invested={savings}
+                        returns={insuranceNeeded}
+                        total={totalFutureIncome}
+                        label1="Existing"
+                        label2="Needed"
+                    />
                 </div>
 
                 <p className="note text-center mt-2">

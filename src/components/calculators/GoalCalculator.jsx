@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as ReTooltip, ResponsiveContainer, Cell, Legend } from 'recharts';
+import ResultChart from './ResultChart';
 
 const GoalCalculator = ({
     title = "Goal Planner",
@@ -54,10 +54,8 @@ const GoalCalculator = ({
         handleCalculate();
     }, []); // Run once on mount
 
-    const data = [
-        { name: 'Current Cost', amount: goalCost },
-        { name: 'Future Cost', amount: result.futureCost },
-    ];
+    const totalInvested = result.monthlySIP * years * 12;
+    const estReturns = Math.max(0, result.futureCost - totalInvested);
 
     return (
         <div className="calculator-container">
@@ -114,24 +112,14 @@ const GoalCalculator = ({
                     </div>
                 </div>
 
-                <div className="chart-wrapper" style={{ minHeight: '220px' }}>
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 40, bottom: 5 }}>
-                            <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                            <XAxis type="number" hide />
-                            <YAxis type="category" dataKey="name" width={100} style={{ fontSize: '0.8rem' }} />
-                            <ReTooltip formatter={(value) => `₹${value.toLocaleString()}`} />
-                            <Bar dataKey="amount" fill="#00588f" barSize={30} radius={[0, 5, 5, 0]}>
-                                {data.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={index === 1 ? '#00588f' : '#9ca3af'} />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
+                <div className="chart-wrapper">
+                    <ResultChart invested={totalInvested} returns={estReturns} total={result.futureCost} />
                 </div>
 
                 <p className="note text-center mt-2">
                     Future Cost of Goal: <strong>₹{result.futureCost.toLocaleString()}</strong>
+                    <br />
+                    (Est. Returns from SIP: ₹{estReturns.toLocaleString()})
                 </p>
                 <p className="hint text-center">
                     Due to {inflation}% inflation vs {returnRate}% returns

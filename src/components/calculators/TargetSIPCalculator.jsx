@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import ResultChart from './ResultChart';
 
 const TargetSIPCalculator = ({ onUpdate }) => {
     const [targetAmount, setTargetAmount] = useState(10000000); // 1 Crore default
@@ -43,11 +43,7 @@ const TargetSIPCalculator = ({ onUpdate }) => {
         handleCalculate();
     }, []);
 
-    const data = [
-        { name: 'Invested Amount', value: totalInvested },
-        { name: 'Est. Returns', value: Math.max(0, targetAmount - totalInvested) },
-    ];
-    const COLORS = ['#9ca3af', '#00588f'];
+    const estReturns = Math.max(0, targetAmount - totalInvested);
 
     return (
         <div className="calculator-container">
@@ -110,26 +106,7 @@ const TargetSIPCalculator = ({ onUpdate }) => {
                 </div>
 
                 <div className="chart-wrapper">
-                    <ResponsiveContainer width="100%" height={300}>
-                        <PieChart>
-                            <Pie
-                                data={data}
-                                cx="50%"
-                                cy="50%"
-                                innerRadius={60}
-                                outerRadius={80}
-                                fill="#8884d8"
-                                paddingAngle={5}
-                                dataKey="value"
-                            >
-                                {data.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                            </Pie>
-                            <Tooltip formatter={(value) => `₹${value.toLocaleString()}`} />
-                            <Legend verticalAlign="bottom" height={36} />
-                        </PieChart>
-                    </ResponsiveContainer>
+                    <ResultChart invested={totalInvested} returns={estReturns} total={targetAmount} />
                 </div>
                 <p className="note text-center mt-4">
                     To reach <strong>₹{Number(targetAmount).toLocaleString()}</strong> in <strong>{years} years</strong> at <strong>{rate}%</strong>.
