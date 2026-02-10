@@ -108,9 +108,15 @@ const TargetSIPCalculator = ({ onUpdate }) => {
                 <div className="chart-wrapper">
                     <ResultChart invested={totalInvested} returns={estReturns} total={targetAmount} />
                 </div>
-                <p className="note text-center mt-4">
-                    To reach <strong>₹{Number(targetAmount).toLocaleString()}</strong> in <strong>{years} years</strong> at <strong>{rate}%</strong>.
-                </p>
+                <div className="calculator-summary">
+                    <div className="summary-row">
+                        <span>Target Goal Amount</span>
+                        <strong>₹{Number(targetAmount).toLocaleString()}</strong>
+                    </div>
+                    <div className="summary-hint">
+                        You need to invest <strong>₹{monthlySIP.toLocaleString()}/mo</strong> for <strong>{years} years</strong> (at {rate}%)
+                    </div>
+                </div>
             </div>
         </div>
     );

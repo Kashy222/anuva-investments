@@ -17,7 +17,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink>
+          <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink>
           <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Services</NavLink>
 
           <NavLink to="/tools" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Tools</NavLink>

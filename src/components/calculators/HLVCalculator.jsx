@@ -43,7 +43,7 @@ const HLVCalculator = ({ onUpdate }) => {
         <div className="calculator-container">
             <h2>Life Insurance (HLV)</h2>
             <div className="calc-controls">
-                <div className="input-group">
+                <div className="input-group full-width">
                     <label>Annual Income (₹)</label>
                     <input
                         type="number"
@@ -108,9 +108,19 @@ const HLVCalculator = ({ onUpdate }) => {
                     />
                 </div>
 
-                <p className="note text-center mt-2">
-                    Based on <strong>{Math.max(0, retirementAge - currentAge)}</strong> working years remaining.
-                </p>
+                <div className="calculator-summary">
+                    <div className="summary-row">
+                        <span>Working Years Remaining</span>
+                        <strong>{Math.max(0, retirementAge - currentAge)} Years</strong>
+                    </div>
+                    <div className="summary-row">
+                        <span>Total Future Income</span>
+                        <strong>₹{totalFutureIncome.toLocaleString()}</strong>
+                    </div>
+                    <div className="summary-hint">
+                        Income to replace: <strong>₹{Math.max(0, totalFutureIncome - savings).toLocaleString()}</strong>
+                    </div>
+                </div>
             </div>
         </div>
     );

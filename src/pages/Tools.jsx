@@ -44,16 +44,29 @@ const Tools = () => {
                         <h3 className="sidebar-title">Financial Calculators</h3>
 
                         {/* Mobile Dropdown */}
+                        {/* Mobile Dropdown (Custom Implementation) */}
                         <div className="mobile-tools-dropdown-container">
-                            <select
-                                className="mobile-tools-dropdown"
-                                value={activeTab}
-                                onChange={(e) => setActiveTab(e.target.value)}
+                            <div
+                                className={`mobile-tools-dropdown ${activeTab ? 'selected' : ''}`}
+                                onClick={() => document.getElementById('tools-dropdown-options').classList.toggle('show')}
                             >
+                                {tabs.find(t => t.id === activeTab)?.label || 'Select Calculator'}
+                            </div>
+                            <div id="tools-dropdown-options" className="mobile-tools-options">
                                 {tabs.map(tab => (
-                                    <option key={tab.id} value={tab.id}>{tab.label}</option>
+                                    <div
+                                        key={tab.id}
+                                        className={`mobile-tool-option ${activeTab === tab.id ? 'active' : ''}`}
+                                        onClick={() => {
+                                            setActiveTab(tab.id);
+                                            document.getElementById('tools-dropdown-options').classList.remove('show');
+                                        }}
+                                    >
+                                        {tab.id === activeTab && <span className="check-icon">✓</span>}
+                                        {tab.label}
+                                    </div>
                                 ))}
-                            </select>
+                            </div>
                         </div>
 
                         {/* Desktop List */}

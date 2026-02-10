@@ -43,7 +43,7 @@ const LumpsumCalculator = ({ onUpdate }) => {
         <div className="calculator-container">
             <h2>Lumpsum Calculator</h2>
             <div className="calc-controls">
-                <div className="input-group">
+                <div className="input-group full-width">
                     <label>Total Investment (₹)</label>
                     <input
                         type="number"

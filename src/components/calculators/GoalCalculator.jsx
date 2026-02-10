@@ -61,7 +61,7 @@ const GoalCalculator = ({
         <div className="calculator-container">
             <h2>{title}</h2>
             <div className="calc-controls">
-                <div className="input-group">
+                <div className="input-group full-width">
                     <label>Current Cost of Goal (₹)</label>
                     <input
                         type="number"
@@ -116,14 +116,19 @@ const GoalCalculator = ({
                     <ResultChart invested={totalInvested} returns={estReturns} total={result.futureCost} />
                 </div>
 
-                <p className="note text-center mt-2">
-                    Future Cost of Goal: <strong>₹{result.futureCost.toLocaleString()}</strong>
-                    <br />
-                    (Est. Returns from SIP: ₹{estReturns.toLocaleString()})
-                </p>
-                <p className="hint text-center">
-                    Due to {inflation}% inflation vs {returnRate}% returns
-                </p>
+                <div className="calculator-summary">
+                    <div className="summary-row">
+                        <span>Future Cost of Goal</span>
+                        <strong>₹{result.futureCost.toLocaleString()}</strong>
+                    </div>
+                    <div className="summary-row">
+                        <span>Est. Returns from SIP</span>
+                        <span className="text-green">₹{estReturns.toLocaleString()}</span>
+                    </div>
+                    <div className="summary-hint">
+                        Considering <strong>{inflation}%</strong> inflation & <strong>{returnRate}%</strong> returns
+                    </div>
+                </div>
             </div>
         </div>
     );

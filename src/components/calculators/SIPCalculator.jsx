@@ -54,7 +54,7 @@ const SIPCalculator = ({ onUpdate }) => {
         <div className="calculator-container">
             <h2>SIP Calculator</h2>
             <div className="calc-controls">
-                <div className="input-group">
+                <div className="input-group full-width">
                     <label>Monthly Investment (₹)</label>
                     <input
                         type="number"

@@ -1,10 +1,8 @@
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #00588f, #004570);
-    background-color: var(--primary-blue);
+    background: var(--primary-blue-gradient);
     color: var(--white);
     padding: 80px 0 60px;
-    /* Reduced bottom padding by 20px (from 80 to 60) */
     position: relative;
     overflow: hidden;
 }
@@ -109,17 +107,12 @@
     justify-content: space-around;
     gap: 30px;
     flex-wrap: wrap;
-    background-color: #dee2e6;
-    /* Specific grey requested */
-    padding: 12px 40px;
-    /* Reduced vertical padding further */
-    /* Reduced for compact size */
-    /* Reduced for compact size */
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
+    background: linear-gradient(to bottom, #f8fafc, #eff6ff);
+    /* Soft blue-gray gradient */
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
 }
 
 .stat-item.vertical {
@@ -182,15 +175,18 @@
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    /* More subtle */
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: 20px;
+    /* Softer radius */
+    padding: 30px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
 }
 
 .chart-header {

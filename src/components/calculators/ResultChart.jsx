@@ -7,7 +7,7 @@ const ResultChart = ({ invested, returns, total, label1 = "Invested", label2 = "
         { name: label2, value: returns },
     ];
 
-    const COLORS = ['#10b981', '#60a5fa']; // Green (Left), Blue (Right)
+    const COLORS = ['#60a5fa', '#b08d48']; // Lighter Blue (Invested), Gold (Returns)
 
     return (
         <div style={{ width: '100%', height: 280, position: 'relative' }}>

@@ -1,147 +1,200 @@
+/* Sidebar Layout (Restored) */
 .tools-layout {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 40px;
-    align-items: start;
+    display: flex;
+    gap: 60px;
+    /* Increased gap between sidebar and content */
+    align-items: flex-start;
+    padding-top: 44px;
+    /* Exact 44px as requested */
+    /* Added top padding as requested */
 }
 
-/* Sticky behavior wrapper if used, or on sidebar itself if wrapper removed */
 .sidebar-wrapper {
-    position: sticky;
-    top: 100px;
-    /* Offset for sticky header */
-    align-self: start;
-    z-index: 10;
-    /* Ensure it stays above scrolling content */
-    background-color: var(--white);
-    /* Prevent content showing through */
-    padding-bottom: 20px;
-    /* Add spacing below dropdown */
-    margin-bottom: 10px;
-}
-
-.tools-sidebar {
-    background: var(--white);
-    border-radius: 8px;
-    border: 1px solid var(--gray-200);
-    overflow: hidden;
-    margin-top: 0;
-}
-
-.tools-page {
-    padding-top: 8px;
-    /* Reduced from 16px */
-}
-
-.tools-content {
-    /* Push content down to align Calculator Box top with Sidebar Box top 
-       Sidebar Title (outside) height ~ 35px + 15px margin = 50px? 
-       Let's approximate visual alignment.
-    */
-    margin-top: 45px;
+    width: 248px;
+    /* Set to exactly 248px as requested */
+    flex-shrink: 0;
 }
 
 .sidebar-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 15px;
+    /* Reduced spacing */
     color: var(--primary-blue);
-    padding-left: 5px;
-    /* Reverted to standalone title style */
+    padding-bottom: 5px;
+    /* Reduced padding */
+    border-bottom: none;
+    /* Removed divider as requested */
+}
+
+/* Sidebar Container */
+.tools-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* No gap between items */
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    overflow: hidden;
+    /* rounded corners for children */
+    background: var(--white);
 }
 
 .tool-tab-btn {
-    display: block;
-    width: 100%;
     text-align: left;
-    padding: 15px 20px;
-    background: none;
+    padding: 14px 20px;
+    background: var(--white);
     border: none;
-    font-size: 1rem;
-    color: var(--gray-600);
     border-bottom: 1px solid var(--gray-100);
+    /* Separator */
+    border-left: 4px solid transparent;
+    /* Placeholder for active border */
+    color: var(--gray-600);
+    font-weight: 400;
     transition: all 0.2s;
+    width: 100%;
+    margin-bottom: 0;
+    /* Connected list */
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
 }
 
 .tool-tab-btn:last-child {
     border-bottom: none;
 }
 
+/* Hover State */
 .tool-tab-btn:hover {
-    background-color: var(--off-white);
+    background: var(--gray-50);
     color: var(--primary-blue);
 }
 
+/* Active State (Exact Match) */
 .tool-tab-btn.active {
-    background-color: #f0f9ff;
+    background: #eef8ff;
+    /* Light blue background */
     color: var(--primary-blue);
-    font-weight: 600;
     border-left: 4px solid var(--primary-blue);
+    /* Left accent border */
+    font-weight: 600;
 }
 
-.tool-heading {
-    font-size: 1.8rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
+.tools-content {
+    flex-grow: 1;
+    max-width: 900px;
+    /* Allow it to reach ~870-900px */
+    min-width: 0;
 }
 
-/* Mobile Dropdown Styles */
+/* Mobile Dropdown */
 .mobile-tools-dropdown-container {
     display: none;
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    /* Increased vertical spacing */
+    z-index: 100;
+    /* Ensure it stays on top */
 }
 
 .mobile-tools-dropdown {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 20px;
+    padding-right: 40px;
     border: 1px solid var(--gray-300);
     border-radius: 8px;
     font-size: 1rem;
-    color: var(--text-dark);
     background-color: var(--white);
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 0.65em auto;
-    appearance: none;
-    -webkit-appearance: none;
+    color: var(--text-dark);
+    font-family: var(--font-sans);
     cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
 }
 
-.mobile-tools-dropdown:focus {
-    border-color: var(--primary-blue);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 124, 178, 0.1);
+.mobile-tools-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* Exactly matches the dropdown width */
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    margin-top: 8px;
+    /* Slight gap */
+    box-shadow: var(--shadow-lg);
+    z-index: 101;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.mobile-tools-options.show {
+    display: block;
+}
+
+.mobile-tool-option {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    border-bottom: 1px solid var(--gray-50);
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    /* Explicit white background */
+}
+
+.mobile-tool-option:last-child {
+    border-bottom: none;
+}
+
+.mobile-tool-option:hover {
+    background-color: var(--gray-50);
+}
+
+.mobile-tool-option.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.check-icon {
+    margin-right: 10px;
 }
 
 @media (max-width: 900px) {
     .tools-layout {
-        grid-template-columns: 1fr;
-        margin-top: 16px;
+        flex-direction: column;
         gap: 0;
-        /* Remove 40px gap from desktop grid */
+        /* Remove horizontal gap in column mode */
+        padding-top: 30px;
+        /* Reduced top padding for mobile */
+    }
+
+    .sidebar-wrapper {
+        width: 100%;
+        margin-bottom: 0;
+        /* Handled by dropdown container margin */
     }
 
     .desktop-sidebar {
-        display: none !important;
+        display: none;
     }
 
     .mobile-tools-dropdown-container {
         display: block;
-        margin-bottom: 0;
     }
 
-    /* Adjust content alignment on mobile if needed */
-    .tools-content {
-        margin-top: 0;
+    .sidebar-title {
+        display: none;
     }
+}
 
-    .sidebar-wrapper {
-        position: static;
-        top: auto;
-        padding-bottom: 0;
-        margin-bottom: 16px;
-        background-color: transparent;
-        /* Clean up if needed, or keep white */
-    }
+.tools-page {
+    min-height: 80vh;
+    padding-bottom: 80px;
 }
