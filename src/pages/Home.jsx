@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, TrendingUp, Shield, CheckCircle } from 'lucide-react';
 import './Home.css';
 import Chatbot from '../components/Chatbot/Chatbot';
+import Testimonials from '../components/Testimonials';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -169,6 +170,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Testimonials Section */}
+            <Testimonials />
 
             {/* CTA Section */}
             <section className="cta-section">

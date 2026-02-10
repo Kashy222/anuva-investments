@@ -101,7 +101,7 @@ const Tools = () => {
 
                         {activeTab === 'insurance' && <HLVCalculator onUpdate={onCalcUpdate} />}
 
-                        <div className="mt-12">
+                        <div>
                             <DiscoveryCallCTA
                                 title="Turn this calculation into your reality"
                                 description="Let's get started"
