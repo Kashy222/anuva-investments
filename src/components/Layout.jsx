@@ -55,12 +55,7 @@ const Footer = () => {
           <p className="footer-desc">
             Helping you achieve financial fitness through personalized planning and smart investing.
           </p>
-          <div className="social-links">
-            <a href="#" className="social-icon"><Linkedin size={20} /></a>
-            <a href="#" className="social-icon"><Twitter size={20} /></a>
-            <a href="#" className="social-icon"><Facebook size={20} /></a>
-            <a href="#" className="social-icon"><Instagram size={20} /></a>
-          </div>
+
         </div>
 
         <div className="footer-col">
