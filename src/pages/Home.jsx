@@ -6,81 +6,23 @@ import Chatbot from '../components/Chatbot/Chatbot';
 import Testimonials from '../components/Testimonials';
 
 const Home = () => {
-    const [currentSlide, setCurrentSlide] = React.useState(0);
-
-    const slides = [
-        {
-            id: 1,
-            title: <>Your Partner in <br /><span className="text-gold">Financial Growth</span></>,
-            subtitle: <>Helping you build prosperity safely <br /> & achieve your financial goals</>,
-            image: "/hero-coins.png",
-            primaryCta: { text: "Book Free Call", link: "/schedule-call" },
-            secondaryCta: { text: "Explore Services", link: "/services" }
-        },
-        {
-            id: 2,
-            title: <>Smart Wealth <br /><span className="text-gold">Construction</span></>,
-            subtitle: <>Scientific portfolio management designed <br /> for long-term compounding.</>,
-            image: "/money-plant.png",
-            primaryCta: { text: "Start Investing", link: "/tools" },
-            secondaryCta: { text: "View Strategy", link: "/services" }
-        },
-        {
-            id: 3,
-            title: <>Legacy & <br /><span className="text-gold">Security</span></>,
-            subtitle: <>Protecting your family's future with <br /> comprehensive insurance planning.</>,
-            image: "/insurance-shield.png",
-            primaryCta: { text: "Get Insured", link: "/tools" },
-            secondaryCta: { text: "Learn More", link: "/services" }
-        }
-    ];
-
-    React.useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000);
-        return () => clearInterval(timer);
-    }, []);
-
     return (
         <div className="home-page">
-            {/* Hero Carousel Section */}
-            <section className="hero-section carousel-mode">
+            {/* Hero Section */}
+            <section className="hero-section">
                 <div className="hero-pattern"></div>
-
-                <div className="carousel-container">
-                    {slides.map((slide, index) => (
-                        <div
-                            key={slide.id}
-                            className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-                            style={{ transform: `translateX(${100 * (index - currentSlide)}%)` }}
-                        >
-                            <div className="container hero-container">
-                                <div className="hero-content">
-                                    <h1 className="hero-title">{slide.title}</h1>
-                                    <p className="hero-subtitle">{slide.subtitle}</p>
-                                    <div className="hero-actions">
-                                        <Link to={slide.primaryCta.link} className="btn btn-primary lg">{slide.primaryCta.text}</Link>
-                                        <Link to={slide.secondaryCta.link} className="btn btn-secondary lg text-white border-white hover-gold">{slide.secondaryCta.text}</Link>
-                                    </div>
-                                </div>
-
-                                <div className="hero-visual">
-                                    <img src={slide.image} alt="Financial Growth" className="hero-image-main" />
-                                </div>
-                            </div>
+                <div className="container hero-container">
+                    <div className="hero-content">
+                        <h1 className="hero-title">Your Partner in <br /><span className="text-gold">Financial Growth</span></h1>
+                        <p className="hero-subtitle">Helping you build prosperity safely <br /> & achieve your financial goals</p>
+                        <div className="hero-actions">
+                            <Link to="/schedule-call" className="btn btn-primary lg">Book Free Call</Link>
+                            <Link to="/services" className="btn btn-secondary lg text-white border-white hover-gold">Explore Services</Link>
                         </div>
-                    ))}
+                    </div>
 
-                    <div className="carousel-dots">
-                        {slides.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
-                                onClick={() => setCurrentSlide(index)}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
+                    <div className="hero-visual">
+                        <img src="/hero-coins.png" alt="Financial Growth" className="hero-image-main" />
                     </div>
                 </div>
             </section>

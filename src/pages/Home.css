@@ -393,7 +393,7 @@
 /* CTA Section */
 /* CTA Section */
 .cta-section {
-    background-color: var(--gray-800) !important;
+    background-color: #013F65 !important;
     padding: 80px 0;
     color: var(--white);
     text-align: center;

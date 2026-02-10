@@ -90,9 +90,54 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="footer-bottom">
-        <div className="container">
-          <p>&copy; {new Date().getFullYear()} Anuva Investments. All rights reserved.</p>
+      <div className="footer-disclaimer">
+        <div className="container disclaimer-content">
+          <div className="disclaimer-section">
+            <p>
+              Anuva Investments is a trusted investment platform. Operated under the brand name of Anuva Investments, we are committed to helping individuals and families make informed investment decisions with ease and transparency.
+            </p>
+            <p>
+              Our mission is to simplify investing by offering a user-friendly, reliable, and secure platform tailored to meet the diverse financial goals of our clients.
+            </p>
+            <p><strong>Registered Office:</strong> Mumbai, India</p>
+            <p>
+              If you have any questions or concerns regarding your investments, please feel free to reach out to us at <a href="mailto:aabasalunkhe@gmail.com">aabasalunkhe@gmail.com</a>. We're here to help.
+            </p>
+          </div>
+
+          <div className="disclaimer-section">
+            <p><strong>Disclaimer:</strong></p>
+            <p><strong>Issued in the Interest of Investors</strong></p>
+            <p>
+              We strongly recommend that you read all relevant scheme documents and the Risk Disclosure Document prescribed by SEBI before making any investment decisions.
+            </p>
+            <p>
+              Anuva Investments makes no warranties or representations, express or implied, regarding any products or services offered through this platform. We accept no liability for any loss or damage arising from the use of, or reliance on, this platform or any information provided herein, regardless of the cause. Unless otherwise stated, all data—including returns, Net Asset Values (NAVs), and expense ratios—are historical in nature and provided for illustrative purposes only. Future performance may differ significantly due to individual circumstances and market conditions.
+            </p>
+            <p>
+              The content available on our platform and through our communication channels is intended solely for informational purposes and should not be construed as investment, legal, or tax advice.
+            </p>
+            <p>
+              Investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results.
+            </p>
+            <p>
+              Terms and conditions on this website/app are applicable. The privacy policy of the website is also applicable.
+            </p>
+          </div>
+
+          <div className="footer-bottom">
+            <div className="container disclaimer-contact">
+              <div className="disclaimer-contact-item">
+                <p>&copy; {new Date().getFullYear()} Anuva Investments. All rights reserved.</p>
+              </div>
+              <div className="disclaimer-contact-item">
+                <Mail size={16} /> <a href="mailto:aabasalunkhe@gmail.com">support@anuva.com</a>
+              </div>
+              <div className="disclaimer-contact-item">
+                <Phone size={16} /> <a href="tel:+919892804546">+91 9892804546</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -78,10 +78,9 @@
 
 /* Footer */
 .footer {
-    background-color: #013F65;
+    background-color: #1F2937;
     color: var(--white);
-    padding: 40px 0 20px;
-    /* Reduced top padding */
+    padding: 64px 0 16px;
     margin-top: auto;
 }
 
@@ -91,7 +90,7 @@
     /* Adjusted columns */
     gap: 30px;
     /* Reduced gap */
-    margin-bottom: 30px;
+    margin-bottom: 16px !important;
     /* Reduced bottom margin */
 }
 
@@ -102,18 +101,17 @@
 
 .footer-logo-img {
     height: 54px;
-    /* Reduced to ~90% (was 60px) */
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+    /* Removed white filter to use original logo colors */
+    opacity: 1;
 }
 
 .footer-desc {
-    color: var(--gray-200);
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    color: #E9EAEB;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 
@@ -131,8 +129,8 @@
 }
 
 .footer-links a {
-    color: var(--gray-200);
-    font-size: 0.9rem;
+    color: #E9EAEB;
+    font-size: 0.95rem;
 }
 
 .footer-links a:hover {
@@ -143,18 +141,63 @@
 .contact-info li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    color: var(--gray-200);
-    font-size: 0.9rem;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #E9EAEB;
+    font-size: 0.95rem;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
+    padding: 30px 0;
     text-align: center;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+}
+
+.footer-disclaimer {
+    padding: 60px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0px !important;
     font-size: 0.85rem;
-    color: var(--gray-300);
+    color: #E9EAEB;
+    line-height: 1.8;
+}
+
+.disclaimer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.disclaimer-section p {
+    margin-bottom: 15px;
+}
+
+.disclaimer-section strong {
+    color: var(--white);
+}
+
+.disclaimer-contact {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.disclaimer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.disclaimer-contact-item a {
+    color: var(--gray-400);
+    text-decoration: none;
+}
+
+.disclaimer-contact-item a:hover {
+    color: var(--primary-gold);
 }
 
 /* Responsiveness */
