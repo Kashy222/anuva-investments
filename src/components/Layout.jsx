@@ -12,7 +12,7 @@ const Header = () => {
     <header className="header">
       <div className="container header-container">
         <Link to="/" className="logo">
-          Anuva <span className="logo-accent">Investments</span>
+          <img src="/anuva-logo-new.png" alt="Anuva Investments" className="logo-img" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -49,7 +49,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-col">
-          <h3 className="footer-logo">Anuva <span>Investments</span></h3>
+          <Link to="/" className="footer-logo-link">
+            <img src="/anuva-logo-new.png" alt="Anuva Investments" className="footer-logo-img" />
+          </Link>
           <p className="footer-desc">
             Helping you achieve financial fitness through personalized planning and smart investing.
           </p>
