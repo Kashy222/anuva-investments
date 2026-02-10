@@ -55,7 +55,7 @@ const About = () => {
             <section className="about-section dark-section philosophy-section">
                 <div className="container">
                     <div className="philosophy-content">
-                        <h2 className="section-title-large text-white">One with your interests.</h2>
+                        <h2 className="about-section-title text-white">One with your interests.</h2>
                         <p className="philosophy-text text-white-opacity">
                             In a world of product-pushing, Anuva stands apart. We are fiduciaries first.
                             Our only incentive is your financial well-being. No hidden commissions, no biased advice—just

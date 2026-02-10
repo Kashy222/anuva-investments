@@ -4,15 +4,18 @@
     gap: 60px;
     /* Increased gap between sidebar and content */
     align-items: flex-start;
-    padding-top: 44px;
-    /* Exact 44px as requested */
-    /* Added top padding as requested */
+    align-items: flex-start;
+    /* Removed padding-top: 44px as requested */
 }
 
 .sidebar-wrapper {
     width: 248px;
     /* Set to exactly 248px as requested */
     flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    /* Sticky positioning */
+    height: fit-content;
 }
 
 .sidebar-title {
@@ -180,6 +183,9 @@
         width: 100%;
         margin-bottom: 0;
         /* Handled by dropdown container margin */
+        position: static;
+        /* Not sticky on mobile */
+        top: auto;
     }
 
     .desktop-sidebar {
@@ -191,11 +197,29 @@
     }
 
     .sidebar-title {
-        display: none;
+        display: block;
+        text-align: left;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
     }
 }
 
 .tools-page {
     min-height: 80vh;
-    padding-bottom: 80px;
+    /* padding-bottom removed to avoid double spacing with .section */
+}
+
+/* Specific spacing override for tools */
+.tools-page .section {
+    padding-top: 60px;
+    /* Reduced from 80px by ~20px */
+}
+
+@media (max-width: 900px) {
+
+    /* padding-bottom removed */
+    .tools-page .section {
+        padding-top: 40px;
+        /* Reduced from 60px by 20px */
+    }
 }

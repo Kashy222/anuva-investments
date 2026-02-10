@@ -18,7 +18,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="desktop-nav">
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>About</NavLink>
+          {/* <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>About</NavLink> */}
           <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Services</NavLink>
 
           <NavLink to="/tools" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>Tools</NavLink>
@@ -34,7 +34,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="mobile-nav">
             <NavLink to="/" onClick={toggleMenu} className="mobile-nav-link">Home</NavLink>
-            <NavLink to="/about" onClick={toggleMenu} className="mobile-nav-link">About</NavLink>
+            {/* <NavLink to="/about" onClick={toggleMenu} className="mobile-nav-link">About</NavLink> */}
             <NavLink to="/services" onClick={toggleMenu} className="mobile-nav-link">Services</NavLink>
 
             <NavLink to="/tools" onClick={toggleMenu} className="mobile-nav-link">Tools</NavLink>
@@ -64,7 +64,7 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
+            {/* <li><Link to="/about">About Us</Link></li> */}
             <li><Link to="/services">Services</Link></li>
 
             <li><Link to="/tools">Tools</Link></li>

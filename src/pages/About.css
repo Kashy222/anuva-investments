@@ -5,9 +5,9 @@
 }
 
 .about-section {
-    padding: 100px 0;
+    padding: 80px 0;
     position: relative;
-    /* Generous whitespace */
+    /* Reduced from 100px */
 }
 
 .light-section {
@@ -39,7 +39,7 @@
 
 /* SECTION 1: HERO MINIMAL */
 .hero-minimal {
-    padding: 120px 0 100px;
+    padding: 80px 0 60px;
     background-color: #fafbfc;
 }
 
@@ -54,11 +54,11 @@
 }
 
 .mission-headline {
-    font-family: "Playfair Display", serif;
-    /* Ensure a serif font is loaded or falls back gracefully */
-    font-size: 3.5rem;
+    font-family: var(--font-sans);
+    /* Changed from serif to sans-serif */
+    font-size: 3.2rem;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 700;
     max-width: 900px;
     margin: 0 auto;
     color: var(--primary-blue);
@@ -81,9 +81,9 @@
 }
 
 .section-title-large {
-    font-family: "Playfair Display", serif;
-    font-size: 4rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 30px;
     color: var(--white);
 }
@@ -100,9 +100,10 @@
     text-align: center;
 }
 
-.section-title {
-    font-family: "Playfair Display", serif;
-    font-size: 2.5rem;
+.about-section-title {
+    font-family: var(--font-sans);
+    font-size: 2.2rem;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -189,10 +190,10 @@
 
 .stat-item-minimal h3 {
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 700;
     color: var(--primary-gold);
     margin-bottom: 5px;
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-sans);
 }
 
 .stat-item-minimal p {
@@ -318,5 +319,22 @@
 
     .stats-row {
         gap: 40px;
+    }
+
+    /* Responsive Spacing Fixes */
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .hero-minimal {
+        padding: 80px 0 60px;
+    }
+
+    .stats-bar {
+        padding: 40px 0;
+    }
+
+    .accordion-header {
+        padding: 20px 0;
     }
 }
