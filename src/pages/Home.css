@@ -392,11 +392,14 @@
 }
 
 /* CTA Section */
+/* CTA Section */
 .cta-section {
-    background-color: var(--gray-800);
+    background-color: var(--gray-800) !important;
     padding: 80px 0;
     color: var(--white);
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .cta-container {

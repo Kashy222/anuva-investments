@@ -171,7 +171,8 @@
         flex-direction: column;
         gap: 0;
         /* Remove horizontal gap in column mode */
-        padding-top: 30px;
+        /* Remove horizontal gap in column mode */
+        padding-top: 0;
         /* Reduced top padding for mobile */
     }
 
@@ -196,5 +197,5 @@
 
 .tools-page {
     min-height: 80vh;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
 }

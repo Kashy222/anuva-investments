@@ -1,122 +1,322 @@
-.about-hero {
-    background: linear-gradient(rgba(0, 36, 66, 0.8), rgba(0, 36, 66, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
+/* GLOBAL & RESET */
+.about-page-premium {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+.about-section {
     padding: 100px 0;
-    text-align: center;
-    margin-top: -20px;
-    /* Offset potential header margin */
+    position: relative;
+    /* Generous whitespace */
 }
 
-.about-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+.light-section {
+    background-color: var(--white);
+    color: var(--primary-blue);
 }
 
-.about-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+.dark-section {
+    background-color: #0b1120;
+    /* Very dark navy, almost black */
+    color: var(--white);
+}
+
+.text-gold {
     color: var(--primary-gold);
 }
 
-.about-hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-.lead-text {
-    font-size: 1.25rem;
+.text-navy {
     color: var(--primary-blue);
-    font-weight: 500;
-    margin-bottom: 20px;
-    line-height: 1.6;
 }
 
-.about-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.stat-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-card h3 {
-    font-size: 2.5rem;
-    color: var(--primary-blue);
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.stat-card p {
+.text-gray {
     color: var(--gray-600);
-    font-weight: 500;
-    margin: 0;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.bg-off-white {
+    background-color: #f9fafb;
 }
 
-.feature-card {
+/* SECTION 1: HERO MINIMAL */
+.hero-minimal {
+    padding: 120px 0 100px;
+    background-color: #fafbfc;
+}
+
+.mission-label {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--gray-600);
+    text-transform: uppercase;
+}
+
+.mission-headline {
+    font-family: "Playfair Display", serif;
+    /* Ensure a serif font is loaded or falls back gracefully */
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--primary-blue);
+}
+
+/* SECTION 2: PHILOSOPHY */
+.philosophy-section {
+    background: linear-gradient(rgba(0, 15, 30, 0.85), rgba(0, 15, 30, 0.95)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax feel */
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.philosophy-content {
+    max-width: 800px;
+}
+
+.section-title-large {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: var(--white);
+}
+
+.philosophy-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+}
+
+/* SECTION 3: LEGACY */
+.legacy-section {
     text-align: center;
-    padding: 30px;
-    border-radius: 12px;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    transition: all 0.3s ease;
 }
 
-.feature-card:hover {
-    border-color: var(--primary-gold);
-    box-shadow: var(--shadow-md);
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-.feature-icon {
-    width: 64px;
-    height: 64px;
-    background-color: var(--off-white);
+.section-subtitle {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.legacy-video-placeholder {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: var(--gray-100);
+    margin: 0 auto;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.legacy-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 10s ease;
+}
+
+.legacy-video-placeholder:hover .legacy-image {
+    transform: scale(1.05);
+}
+
+.play-button-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.play-button-wrapper:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.play-button {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid var(--white);
+    margin-left: 4px;
+}
+
+/* SECTION 4: STATS BAR */
+.stats-bar {
+    padding: 60px 0;
+    background-color: var(--primary-blue-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item-minimal {
+    text-align: center;
+}
+
+.stat-item-minimal h3 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--primary-gold);
+    margin-bottom: 5px;
+    font-family: "Playfair Display", serif;
+}
+
+.stat-item-minimal p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* SECTION 5: JOURNEY ACCORDION */
+.journey-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.text-gray-left {
+    text-align: left;
+    margin: 0 0 30px;
+}
+
+.journey-accordion {
+    border-top: 1px solid var(--gray-200);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--gray-200);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.step-number {
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.accordion-title h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
     color: var(--primary-blue);
+    margin: 0;
 }
 
-.cta-section {
-    background-color: var(--light-blue);
-    padding: 80px 0;
+.accordion-icon {
+    color: var(--gray-300);
+    transition: color 0.3s;
 }
 
-@media (max-width: 768px) {
-    .about-hero h1 {
-        font-size: 2rem;
+.accordion-item.active .accordion-icon {
+    color: var(--primary-gold);
+}
+
+.accordion-item.active .accordion-title h3 {
+    color: var(--primary-gold-text);
+}
+
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease;
+    padding: 0 0 0 55px;
+    /* Align with title */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    /* Adjust as needed */
+    padding-bottom: 30px;
+}
+
+.accordion-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    max-width: 90%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .mission-headline {
+        font-size: 2.2rem;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .section-title-large {
+        font-size: 2.5rem;
+    }
+
+    .journey-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .legacy-video-placeholder {
+        height: 300px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stats-row {
+        gap: 40px;
     }
 }

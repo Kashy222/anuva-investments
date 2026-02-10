@@ -107,9 +107,6 @@ const Services = () => {
                         </div>
                     ))}
                 </div>
-            </div>
-
-            <div className="container section">
                 <DiscoveryCallCTA />
             </div>
         </div>
