@@ -89,10 +89,8 @@
     /* Reduced to ~90% (was 60px) */
     width: auto;
     object-fit: contain;
-    background: white;
-    /* Optional: if logo acts better on white */
-    padding: 5px;
-    border-radius: 8px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .footer-desc {
